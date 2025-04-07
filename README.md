@@ -4,12 +4,14 @@
 ### Tổng quan
 
 ![image.png](https://images.viblo.asia/3593e0bf-bea1-47a0-9e1f-c9cb596a7c5a.png)
+
 XML là viết tắt của **eXtensible Markup Language**,được phát triển với mục đích lưu trữ và vận chuyển dữ liệu.
 Ngôn ngữ được lập trình dựa trên cơ sơ `Standard Generalized Markup Language (SGML)` 
 Phiên bản XML phổ biến nhất là  XML 1.0
 ### Xử lý XML trong ứng dụng:
 ![](https://cdn.discordapp.com/attachments/1302520723104862309/1302521254971965481/image.png?ex=67f0cef2&is=67ef7d72&hm=b7739eb8a1253a4cf0f8de67c675367e32c90faac508d5438e454ad70fa8ec12&=)
 ![](http://note.bksec.vn/pad/uploads/ac366565-f4c5-4f26-bd43-1ee3f8a90d87.png)
+
 Ví dụ 1 file XML: 
 ```xml
 <?xml version="1.0" encoding="UTF-8" ?>
