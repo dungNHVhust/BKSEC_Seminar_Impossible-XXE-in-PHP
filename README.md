@@ -126,7 +126,7 @@ Nhưng **không cho phép nested entity** (ENTITY trong ENTITY) như payload nà
 → Vì **mọi payload XXE đều cần DTD**, nên cách này giống như firewall chặn từ vòng gửi xe 🚫
 
 Đoạn code trên tạm an toàn đến khi gặp payload này:
-![](https://swarm.ptsecurity.com/wp-content/uploads/2025/03/c5a75364-img_1.png)
+![](http://note.bksec.vn/pad/uploads/a8b8e009-afc3-4167-a8d9-199fa7b26780.png)
 
 ### Bypass,bypass và bypass
 **PHP tưởng đã fix XXE rồi, nhưng thực ra vẫn có lỗ hổng nếu dev:**
@@ -368,7 +368,7 @@ Với `lightyear dechunk`, ta có thể chia nhỏ file thành nhiều phần, m
 
 Payload cực nhỏ, không cần wrapwrap dài → file lớn vẫn exfil được!
 
-![alt text](https://swarm.ptsecurity.com/wp-content/uploads/2025/03/6c59e220-Comapare2.png)
+![](http://note.bksec.vn/pad/uploads/3e4fd0bc-f62d-46b7-b1a1-8ab72b7a5b52.png)
 
 ### Làm gì khi server bị chặn kết nối TCP ra ngoài
 Trong một số trường hợp, server chặn toàn bộ kết nối TCP outbound
@@ -400,7 +400,8 @@ Payload:
 ```
 
 Dữ liệu được gửi qua DNS request → kẻ tấn công log lại tên miền truy cập để thu thập file
-![alt text](image-1.png)
+
+![](http://note.bksec.vn/pad/uploads/955a7dfc-738a-468b-8568-896e304ae7a1.png)
 
 ⚠️ Lưu ý:
 - Mỗi phần giữa dấu . không được dài hơn 63 ký tự
@@ -421,7 +422,8 @@ Final Payload:
 %payload;
 %e;
 ```
-![alt text](https://swarm.ptsecurity.com/wp-content/uploads/2025/03/c5a75364-img_1.png)
+
+![](http://note.bksec.vn/pad/uploads/a8b8e009-afc3-4167-a8d9-199fa7b26780.png)
 
 ## Tool exploit 
 [Link](https://github.com/bytehope/wwe)
