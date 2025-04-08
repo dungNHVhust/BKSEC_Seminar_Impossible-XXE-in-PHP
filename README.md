@@ -358,7 +358,7 @@ Payload hoàn thiện:
 ```
 Chú ý: `A-LOT-OF-WRAPWRAP-FILTERS` là lặp lại nhiều lần  filter `convert.base64-encode` (~ 20 lần)
 
-### lightyear chunks
+### [lightyear chunks](https://blog.lexfo.fr/lightyear-file-dump.html)
 Nhưng có một vấn đề: vì wrapwrap phải dùng rất nhiều filter, nên file càng lớn thì payload cũng càng to.Thậm chí có thể lên đến hàng chục KB chỉ để đọc vài dòng dữ liệu.
 
 Khi parser đọc `SYSTEM` "uri", nó sẽ check độ dài.
