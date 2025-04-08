@@ -510,4 +510,6 @@ https://swarm.ptsecurity.com/impossible-xxe-in-php/
 
 https://viblo.asia/p/xxe-injection-vulnerabilities-lo-hong-xml-phan-1-vlZL992BLQK
 
+https://blog.lexfo.fr/lightyear-file-dump.html
+
 https://github.com/bytehope/wwe
