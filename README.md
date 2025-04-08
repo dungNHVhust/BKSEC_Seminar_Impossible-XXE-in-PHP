@@ -461,7 +461,7 @@ options:
 
 Các tham số:
 
-- `-f FILE_TO_EXFILTRATE` : Đây là file nằm trên máy nạn nhân mà user muốn lấy nội dung. Ví dụ: `/etc/passwd`, `/var/www/html/config.php`.
+- `-f FILE_TO_EXFILTRATE` : Đây là file nằm trên máy nạn nhân mà attacker muốn lấy nội dung. Ví dụ: `/etc/passwd`, `/var/www/html/config.php`.
 
 - `--decode DECODE_URL` : Là máy chủ của attacker nơi nạn nhân sẽ gửi dữ liệu về. Ví dụ: `http://your-server.com:9999` . Công cụ sẽ khởi chạy server lắng nghe ở đây.
 
